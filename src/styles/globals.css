@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1e2642 transparent;
+  }
+  *::-webkit-scrollbar { width: 6px; height: 6px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: #1e2642; border-radius: 3px; }
+  *::-webkit-scrollbar-thumb:hover { background: #2a3458; }
+
+  ::selection {
+    background: rgba(16, 185, 129, 0.3);
+    color: #f1f5f9;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-800 border border-border rounded-xl p-5 shadow-card
+           transition-all duration-300 hover:border-border-hover hover:shadow-card-hover;
+  }
+  .card-flat {
+    @apply bg-bg-800 border border-border rounded-xl p-5;
+  }
+  .stat-value {
+    @apply text-3xl font-bold font-display tracking-tight text-text-primary;
+  }
+  .stat-label {
+    @apply text-sm font-medium text-text-secondary;
+  }
+  .stat-change-up {
+    @apply text-sm font-medium text-primary;
+  }
+  .stat-change-down {
+    @apply text-sm font-medium text-accent-red;
+  }
+  .btn-primary {
+    @apply px-5 py-2.5 bg-primary text-bg-900 font-semibold rounded-lg
+           hover:bg-primary-dim transition-all duration-200
+           active:scale-[0.97] shadow-glow-green;
+  }
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-bg-700 text-text-primary border border-border rounded-lg
+           hover:bg-bg-600 hover:border-border-hover transition-all duration-200
+           active:scale-[0.97];
+  }
+  .input-field {
+    @apply w-full px-4 py-3 bg-bg-700 border border-border rounded-lg
+           text-text-primary placeholder-text-muted
+           focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30
+           transition-all duration-200;
+  }
+  .module-title {
+    @apply text-2xl font-bold font-display tracking-tight;
+  }
+  .module-subtitle {
+    @apply text-sm text-text-secondary mt-1;
+  }
+  .badge-green {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-primary/15 text-primary;
+  }
+  .badge-red {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-accent-red/15 text-accent-red;
+  }
+  .badge-orange {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-accent-orange/15 text-accent-orange;
+  }
+}
